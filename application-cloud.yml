@@ -5,3 +5,6 @@ spring:
 eureka:
   instance:
      nonSecurePort: 80
+spring:
+  zipkin:
+    baseUrl: http://zipkin-diphthongous-unchasteness.cfapps-03.haas-40.pez.pivotal.io/
