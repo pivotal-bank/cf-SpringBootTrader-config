@@ -1,5 +1,6 @@
 logging:
   level:
+     zipkin: DEBUG
      io:
         pivotal: DEBUG
      com:
