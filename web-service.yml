@@ -11,3 +11,6 @@ pivotal:
     symbols:
       it: ORCL,IBM,INTC,AMD,HPQ,CSCO,AAPL
       fs: JPM,C,MS,BAC,GS,WFC,BK
+management:
+  security:
+    enabled: false
