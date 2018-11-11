@@ -19,3 +19,15 @@ logging:
         springframework:
            web: WARN
            cloud: WARN
+spring:
+  sleuth:
+    sampler:
+      probability: 1.0
+  jpa:
+     hibernate:
+        ddl-auto: update
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
