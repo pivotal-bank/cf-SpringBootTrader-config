@@ -1,2 +1,13 @@
 server:
   port: 8084
+
+
+security:
+  oauth2:
+    client:
+      uaa:
+         accessTokenUri: ${security.oauth2.client.accessTokenUri}
+         userAuthorizationUri: ${securuty.oauth2.client.userAuthorizationUri}
+         clientId: ${security.oauth2.client.clientId}
+         clientSecret: ${security.oauth2.client.clientSecret}
+         scope: clients.read clients.write scim.read scim.write zones.uaa.admin uaa.admin

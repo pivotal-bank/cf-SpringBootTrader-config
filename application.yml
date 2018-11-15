@@ -26,8 +26,20 @@ spring:
   jpa:
      hibernate:
         ddl-auto: update
+  main:
+     allow-bean-definition-overriding: true
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+scopes:
+  admin: bank.admin
+  buy: trade.buy
+  sell: trade.sell
+  portfolioRead: portfolio.read
+  accountOpen: account.open
+  bank: pivotal.bank
+
+
