@@ -4,19 +4,15 @@ management:
       enabled: false
 logging:
   level:
-     io:
-        pivotal: DEBUG
-     com:
-        netflix: INFO
-     org:
-        springframework:
-           web: INFO
-           cloud: WARN
-spring:
-  zipkin:
-    baseUrl: http://localhost:9411/
-    sender:
-      type: web
+    io:
+      pivotal: DEBUG
+    com:
+      netflix: INFO
+    org:
+      springframework:
+        web: INFO
+        cloud: WARN
+
 # disable the hystrix streaming on rabbit locally
 hystrix:
   stream:
@@ -27,14 +23,22 @@ hystrix:
 targets:
   uaa: http://localhost:8080/uaa
 
-security:
-  oauth2:
-    client:
-      accessTokenUri: ${targets.uaa}/oauth/token
-      userAuthorizationUri: ${targets.uaa}/oauth/authorize
-      clientId: pivotalbank
-      clientSecret: secret
-      scope: openid,bank.admin,trade.buy,trade.sell,portfolio.read,account.open,pivotal.bank
-    resource:
-      jwk:
-         key-set-uri: ${targets.uaa}/token_keys
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${targets.uaa}/oauth/token
+
+#security:
+#  oauth2:
+#    client:
+#      accessTokenUri: ${targets.uaa}/oauth/token
+#      userAuthorizationUri: ${targets.uaa}/oauth/authorize
+#      clientId: pivotalbank
+#      clientSecret: secret
+#      scope: openid,bank.admin,trade.buy,trade.sell,portfolio.read,account.open,pivotal.bank
+#    resource:
+ #     jwk:
+ #       key-set-uri: ${targets.uaa}/token_keys
+
