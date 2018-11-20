@@ -23,13 +23,18 @@ hystrix:
 targets:
   uaa: http://localhost:8080/uaa
 
+uaa:
+  identity-zone-id: uaa
+
+
 spring:
   security:
     oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: ${targets.uaa}/oauth/token
-
+      client:
+        registration:
+          pivotalbank:
+            clientId: pivotalbank
+            clientSecret: secret
 #security:
 #  oauth2:
 #    client:

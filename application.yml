@@ -28,6 +28,21 @@ spring:
         ddl-auto: update
   main:
      allow-bean-definition-overriding: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${targets.uaa}/oauth/token
+      client:
+        registration:
+          pivotalbank:
+            provider: uaa
+            scope: openid,trade,portfolio,account,pivotal.bank
+            authorization-grant-type: authorization_code
+            redirect-uri-template: "{baseUrl}/login/oauth2/code/{registrationId}"
+        provider:
+          uaa:
+            issuer-uri: ${targets.uaa}/oauth/token
 management:
   endpoints:
     web:
@@ -35,11 +50,11 @@ management:
         include: "*"
 
 scopes:
-  admin: bank.admin
-  buy: trade.buy
-  sell: trade.sell
-  portfolioRead: portfolio.read
-  accountOpen: account.open
+  trade: trade
+  account: account
+  portfolio: portfolio
   bank: pivotal.bank
+
+
 
 

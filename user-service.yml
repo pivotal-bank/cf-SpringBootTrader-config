@@ -1,0 +1,13 @@
+server:
+  port: 8084
+
+security:
+  oauth2:
+    client:
+      uaa:
+        accessTokenUri: ${targets.uaa}/oauth/token
+        userAuthorizationUri: ${targets.uaa}/oauth/authorize
+        clientId: ${spring.security.oauth2.client.registration.pivotalbank.clientId}
+        clientSecret: ${spring.security.oauth2.client.registration.pivotalbank.clientSecret}
+        scope: clients.read clients.write scim.read scim.write zones.uaa.admin uaa.admin
+

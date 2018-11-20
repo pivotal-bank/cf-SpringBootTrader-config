@@ -3,19 +3,3 @@ server:
 spring:
   thymeleaf:
      cache: false
-  resources:
-     cache-period:0
-  security:
-    oauth2:
-      client:
-        registration:
-          pivotalbank:
-            provider: uaa
-            clientId: pivotalbank
-            clientSecret: secret
-            scope: openid,bank.admin,trade.buy,trade.sell,portfolio.read,account.open,pivotal.bank
-            authorization-grant-type: authorization_code
-            redirect-uri-template: "{baseUrl}/login/oauth2/code/{registrationId}"
-        provider:
-          uaa:
-            issuer-uri: ${targets.uaa}/oauth/token
