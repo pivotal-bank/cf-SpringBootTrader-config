@@ -1,0 +1,14 @@
+targets:
+  uaa: ${vcap.services.p-identity.credentials.auth_domain}
+
+uaa:
+  identity-zone-id: b412cbb6-0928-4aee-8aca-10d5f71b6696
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          pivotalbank:
+            clientId: ${vcap.services.p-identity.credentials.client_id}
+            clientSecret: ${vcap.services.p-identity.credentials.client_secret}

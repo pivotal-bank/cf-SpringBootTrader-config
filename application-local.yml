@@ -35,15 +35,4 @@ spring:
           pivotalbank:
             clientId: pivotalbank
             clientSecret: secret
-#security:
-#  oauth2:
-#    client:
-#      accessTokenUri: ${targets.uaa}/oauth/token
-#      userAuthorizationUri: ${targets.uaa}/oauth/authorize
-#      clientId: pivotalbank
-#      clientSecret: secret
-#      scope: openid,bank.admin,trade.buy,trade.sell,portfolio.read,account.open,pivotal.bank
-#    resource:
- #     jwk:
- #       key-set-uri: ${targets.uaa}/token_keys
 
