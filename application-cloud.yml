@@ -1,5 +1,5 @@
 targets:
-  uaa: ${vcap.services.p-identity.credentials.auth_domain}
+  uaa: ${vcap.services.pivotal-bank-sso.credentials.auth_domain}
 
 uaa:
   identity-zone-id: b412cbb6-0928-4aee-8aca-10d5f71b6696
