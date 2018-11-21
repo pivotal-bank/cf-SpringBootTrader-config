@@ -11,6 +11,6 @@ targets:
 
 logging:
   level:
-    org.springframework.security: TRACE
+    org.apache.http: DEBUG
 
 
