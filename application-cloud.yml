@@ -10,5 +10,5 @@ spring:
       client:
         registration:
           pivotalbank:
-            clientId: ${vcap.services.p-identity.credentials.client_id}
-            clientSecret: ${vcap.services.p-identity.credentials.client_secret}
+            clientId: ${vcap.services.pivotal-bank-sso.credentials.client_id}
+            clientSecret: ${vcap.services.pivotal-bank-sso.credentials.client_secret}
