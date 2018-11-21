@@ -1,0 +1,3 @@
+targets:
+  uaa: ${vcap.services.pivotal-bank-sso.credentials.auth_domain}
+
