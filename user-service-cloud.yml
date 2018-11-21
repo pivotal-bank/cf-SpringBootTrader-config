@@ -6,7 +6,8 @@ security:
         clientSecret: ${vcap.services.uaa-admin.credentials.client-secret}
 
 targets:
-  uaa: https://login.sys.lab01.pcf.pw
+  admin:
+    uaa: https://login.sys.lab01.pcf.pw
 
 logging:
   level:
