@@ -2,7 +2,7 @@ targets:
   #uaa: ${vcap.services.pivotal-bank-sso.credentials.auth_domain}
   uaa: https://pivotal-bank-sso.uaa.sys.lab01.pcf.pw
 uaa:
-  identity-zone-id: b412cbb6-0928-4aee-8aca-10d5f71b6696
+  identity-zone-id: pivotal-bank-sso
 
 spring:
   security:
