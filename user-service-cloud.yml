@@ -7,3 +7,7 @@ spring:
             clientId: ${vcap.services.uaa-admin.credentials.client-id}
             clientSecret: ${vcap.services.uaa-admin.credentials.client-secret}
 
+logging:
+  level:
+    org.springframework.security: TRACE
+
