@@ -1,3 +1,9 @@
-targets:
-  uaa: ${vcap.services.pivotal-bank-sso.credentials.auth_domain}
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          pivotalbank:
+            clientId: ${vcap.services.uaa-admin.credentials.client-id}
+            clientSecret: ${vcap.services.uaa-admin.credentials.client-secret}
 
