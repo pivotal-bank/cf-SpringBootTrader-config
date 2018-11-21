@@ -12,3 +12,10 @@ spring:
           pivotalbank:
             clientId: ${vcap.services.pivotal-bank-sso.credentials.client_id}
             clientSecret: ${vcap.services.pivotal-bank-sso.credentials.client_secret}
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
