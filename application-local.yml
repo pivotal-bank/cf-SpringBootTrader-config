@@ -24,7 +24,7 @@ targets:
   uaa: http://localhost:8080/uaa
 
 uaa:
-  identity-zone-id: uaa
+  identity-zone-id:
 
 
 spring:
