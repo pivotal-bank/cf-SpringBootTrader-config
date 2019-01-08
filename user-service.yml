@@ -1,9 +1,10 @@
-spring:
-  application:
-     name: user-service
-  jpa:
-     hibernate:
-        ddl-auto: update
 security:
-  basic:
-    enabled: false
+  oauth2:
+    client:
+      uaa:
+        accessTokenUri: ${targets.admin.uaa}/oauth/token
+        userAuthorizationUri: ${targets.admin.uaa}/oauth/authorize
+        clientId: ${spring.security.oauth2.client.registration.pivotalbank.clientId}
+        clientSecret: ${spring.security.oauth2.client.registration.pivotalbank.clientSecret}
+        scope: clients.read clients.write scim.read scim.write zones.uaa.admin uaa.admin
+

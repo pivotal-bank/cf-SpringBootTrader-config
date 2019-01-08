@@ -1,0 +1,16 @@
+security:
+  oauth2:
+    client:
+      uaa:
+        clientId: ${vcap.services.uaa-admin.credentials.client-id}
+        clientSecret: ${vcap.services.uaa-admin.credentials.client-secret}
+        scope: zones.b412cbb6-0928-4aee-8aca-10d5f71b6696.admin
+targets:
+  admin:
+    uaa: https://login.sys.lab01.pcf.pw
+
+logging:
+  level:
+    org.apache.http: DEBUG
+
+
