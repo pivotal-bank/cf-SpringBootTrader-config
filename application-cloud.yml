@@ -12,7 +12,10 @@ spring:
           pivotalbank:
             clientId: ${vcap.services.pivotal-bank-sso.credentials.client_id}
             clientSecret: ${vcap.services.pivotal-bank-sso.credentials.client_secret}
-
+  redis:
+    host: ${vcap.services.redis.credentials.host}
+    password: ${vcap.services.redis.credentials.password}
+    port: ${vcap.services.redis.credentials.port}
 
 management:
   endpoints:

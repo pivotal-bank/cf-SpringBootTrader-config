@@ -43,6 +43,9 @@ spring:
         provider:
           uaa:
             issuer-uri: ${targets.uaa}/oauth/token
+  session:
+    store-type: redis
+
 management:
   endpoints:
     web:
