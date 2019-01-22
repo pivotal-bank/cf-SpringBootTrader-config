@@ -1,7 +1,24 @@
+targets:
+  #uaa: ${vcap.services.pivotal-bank-sso.credentials.auth_domain}
+  uaa: https://pivotal-bank-sso.uaa.sys.lab01.pcf.pw
+uaa:
+  identity-zone-id: pivotal-bank-sso
+
 spring:
-  cloud:
-    services:
-      registrationMethod: route
-eureka:
-  instance:
-     nonSecurePort: 80
+  security:
+    oauth2:
+      client:
+        registration:
+          pivotalbank:
+            clientId: ${vcap.services.pivotal-bank-sso.credentials.client_id}
+            clientSecret: ${vcap.services.pivotal-bank-sso.credentials.client_secret}
+  redis:
+    host: ${vcap.services.redis.credentials.host}
+    password: ${vcap.services.redis.credentials.password}
+    port: ${vcap.services.redis.credentials.port}
+
+management:
+  endpoints:
+    web:
+      exposure:
+         include: '*'

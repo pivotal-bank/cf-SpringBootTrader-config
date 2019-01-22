@@ -19,3 +19,45 @@ logging:
         springframework:
            web: WARN
            cloud: WARN
+spring:
+  sleuth:
+    sampler:
+      probability: 1.0
+  jpa:
+     hibernate:
+        ddl-auto: update
+  main:
+     allow-bean-definition-overriding: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${targets.uaa}/oauth/token
+      client:
+        registration:
+          pivotalbank:
+            provider: uaa
+            scope: openid,trade,portfolio,account,pivotal.bank
+            authorization-grant-type: authorization_code
+            redirect-uri-template: "{baseUrl}/login/oauth2/code/{registrationId}"
+        provider:
+          uaa:
+            issuer-uri: ${targets.uaa}/oauth/token
+  session:
+    store-type: redis
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+scopes:
+  trade: trade
+  account: account
+  portfolio: portfolio
+  bank: pivotal.bank
+
+
+
+
